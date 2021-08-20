@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenP3PM2.Views.AddPagoPage"
+             xmlns:local="clr-namespace:ExamenP3PM2.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:AddPagoViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Descripcion" FontSize="Medium" ></Label>
+            <Entry Text="{Binding Pagos.Descripcion, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Monto" FontSize="Medium" ></Label>
+            <Entry Text="{Binding Pagos.Monto, Mode=TwoWay}" FontSize="Medium"/>
+       
+
+            <StackLayout Orientation="Horizontal">
+                
+                <Button Text="Cancelar" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Guardar" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
